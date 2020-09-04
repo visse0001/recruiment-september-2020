@@ -34,3 +34,10 @@ docker-compose -v
 docker-compose version 1.25.4, build 8d51620a
 ```
 
+Build the image:
+
+`docker-compose build`
+
+Fire up the container in detached mode:
+
+`docker-compose up -d`

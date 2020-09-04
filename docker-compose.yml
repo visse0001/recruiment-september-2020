@@ -1,0 +1,34 @@
+version: '3.7'
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - .:/postgres_data/
+  fastapi:
+    build: .
+    command: uvicorn main:app --reload --host 0.0.0.0
+    volumes:
+      - .:/app/
+    ports:
+      - "8000:8000"
+  django:
+    build: .
+    environment:
+      - DJANGO_SETTINGS_MODULE=iothome.settings.production
+    command: python manage.py runserver 0.0.0.0:8080
+    volumes:
+      - .:/code/
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
+
+volumes:
+  postgres_data:
