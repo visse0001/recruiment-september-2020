@@ -59,5 +59,6 @@ docker-compose exec django python manage.py makemigrations
 docker-compose exec django python manage.py migrate
 ```
 
-To create superuser:
-`docker-compose exec django python manage.py createsuperuser` <br>
+To create superuser: <br>
+`docker-compose exec django python manage.py createsuperuser`
+
