@@ -50,3 +50,12 @@ Fire up cointainers:
 or fire up containers in detached mode:
 
 `docker-compose up -d`
+
+## Database: postgres (Django, docker-compose)
+
+To make migrations and migrate:
+`docker-compose exec django python manage.py makemigrations` <br>
+`docker-compose exec django python manage.py migrate` <br>
+
+To create superuser:
+`docker-compose exec django python manage.py createsuperuser` <br>
