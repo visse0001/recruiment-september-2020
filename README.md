@@ -13,12 +13,13 @@ To upgrade existing pip: <br>
 `pip install --upgrade pip`
 
 To install dependencies from requirements.txt in: djangoapp and fastapiapp: <br>
-`cd djangoapp`
-`pip install -r requirements.txt`
-
-`cd ..`
-`cd fastapiapp`
-`pip install -r requirements.txt`
+```
+cd djangoapp
+pip install -r requirements.txt
+cd ..
+cd fastapiapp
+pip install -r requirements.txt
+```
 
 ## Dependencies
 
