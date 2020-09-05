@@ -9,6 +9,17 @@ Create a virtual environment: <br/>
 To activate a venv: <br/>
 `source venv/bin/activate`
 
+To upgrade existing pip: <br>
+`pip install --upgrade pip`
+
+To install dependencies from requirements.txt in: djangoapp and fastapiapp: <br>
+`cd djangoapp`
+`pip install -r requirements.txt`
+
+`cd ..`
+`cd fastapiapp`
+`pip install -r requirements.txt`
+
 ## Dependencies
 
 [Python 3.8](https://www.python.org/downloads/) <br>
@@ -16,12 +27,6 @@ To activate a venv: <br/>
 [Django](https://docs.djangoproject.com/en/3.1/) <br>
 [Postgres](https://www.postgresql.org/) <br>
 [FastAPI](https://fastapi.tiangolo.com/) <br>
-
-To upgrade existing pip: <br>
-`pip install --upgrade pip`
-
-To install dependencies from requirements.txt: <br>
-`pip install -r requirements.txt`
 
 ## Docker
 
@@ -45,3 +50,12 @@ Fire up cointainers:
 or fire up containers in detached mode:
 
 `docker-compose up -d`
+
+## Database: postgres (Django, docker-compose)
+
+To make migrations and migrate:
+`docker-compose exec django python manage.py makemigrations` <br>
+`docker-compose exec django python manage.py migrate` <br>
+
+To create superuser:
+`docker-compose exec django python manage.py createsuperuser` <br>
