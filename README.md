@@ -1,6 +1,6 @@
 # An application with a microservice for data authorization
 
-Link to the [task](recruiment_task.md).
+Link to the [task](https://github.com/visse0001/recruiment-september-2020/blob/master/recuriment_task.md).
 
 ## Virtual Enviroment
 Create a virtual environment: <br/>
