@@ -1,10 +1,9 @@
 FROM python:3.8.2-alpine
+ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 RUN mkdir /app
 WORKDIR /app
-
-
 
 # install psycopg2 dependencies
 RUN apk update \
