@@ -9,23 +9,23 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - .:/postgres_data/
+      - ./pg_data:/postgres_data/
   fastapi:
     build: .
     command: uvicorn main:app --reload --host 0.0.0.0
     volumes:
-      - .:/app/
+      - ./fastapiapp:/app/
     ports:
       - "8000:8000"
+    depends_on:
+      - postgres
   django:
     build: .
-    environment:
-      - DJANGO_SETTINGS_MODULE=iothome.settings.production
-    command: python manage.py runserver 0.0.0.0:8080
+    command: python manage.py runserver 0.0.0.0:3000
     volumes:
-      - .:/code/
+      - ./djangoapp:/app
     ports:
-      - "8080:8080"
+      - "3000:3000"
     depends_on:
       - postgres
 
