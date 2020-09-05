@@ -38,24 +38,25 @@ Docker version 19.03.5, build 633a0ea
 docker-compose -v
 docker-compose version 1.25.4, build 8d51620a
 ```
+Build and run containers: <br>
+`docker-compose up -d --build`
 
-Build the image:
-
+Build the image: <br>
 `docker-compose build`
 
-Fire up cointainers:
-
+Fire up cointainers: <br>
 `docker-compose up`
 
-or fire up containers in detached mode:
-
+or fire up containers in detached mode: <br>
 `docker-compose up -d`
 
 ## Database: postgres (Django, docker-compose)
 
-To make migrations and migrate:
-`docker-compose exec django python manage.py makemigrations` <br>
-`docker-compose exec django python manage.py migrate` <br>
+To make migrations and migrate: <br>
+```
+docker-compose exec django python manage.py makemigrations
+docker-compose exec django python manage.py migrate
+```
 
 To create superuser:
 `docker-compose exec django python manage.py createsuperuser` <br>
