@@ -38,6 +38,10 @@ Build the image:
 
 `docker-compose build`
 
-Fire up the container in detached mode:
+Fire up cointainers:
+
+`docker-compose up`
+
+or fire up containers in detached mode:
 
 `docker-compose up -d`
