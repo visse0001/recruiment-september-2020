@@ -26,6 +26,8 @@ services:
       - ./djangoapp:/app/
     ports:
       - "3000:3000"
+    env_file:
+      - ./djangoapp/.env.dev
     depends_on:
       - postgres
 
