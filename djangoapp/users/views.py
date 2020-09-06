@@ -8,8 +8,6 @@ def register(request):
     if request.method == "POST":
         form = RegisterForm(request.POST)
         if form.is_valid():
-            first_name = form.cleaned_data.get("first_name")
-            last_name = form.cleaned_data.get("last_name")
             form.save()
 
             context = {'form': form}
