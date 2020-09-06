@@ -5,8 +5,10 @@
     <title>Users</title>
 </head>
 <body>
-<form method="POST" action="{% url 'form' %}">{% csrf_token %}
+<form method="POST" action="{% url 'form' %}">
+    {% csrf_token %}
     <input type="text" name="username">
+    <input type="text" name="email">
     <input type="submit" name="submit">
 </form>
 </body>
