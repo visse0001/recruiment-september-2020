@@ -1,4 +1,4 @@
-from typing import Optional
+import requests
 
 from fastapi import FastAPI
 
@@ -14,6 +14,10 @@ def read_root():
     return {"Hello": "World"}
 
 
-@app.get("/users/{first_name}/{last_name}/{email}")
-def read_users(first_name: str, last_name: str, email: str):
-    return {f'First name: {first_name}, last name: {last_name}, email: {email}'}
+@app.get("/users/")
+def read_users():
+    url = 'http://127.0.0.1:3000/login/'
+    r = requests.get(url)
+
+    r = r.text
+    return r
