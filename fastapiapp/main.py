@@ -1,6 +1,8 @@
 import requests
+import json
 
 from fastapi import FastAPI
+from fastapi.responses import JSONResponse
 
 # Start applications
 app = FastAPI(
@@ -16,8 +18,7 @@ def read_root():
 
 @app.get("/users/")
 def read_users():
-    url = 'http://127.0.0.1:3000/login/'
+    url = 'http://django:3000/login/'
     r = requests.get(url)
-
-    r = r.text
-    return r
+    r.json()
+    return JSONResponse(r)
