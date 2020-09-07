@@ -20,5 +20,8 @@ def read_root():
 def read_users():
     url = 'http://django:3000/login/'
     r = requests.get(url)
+    # [WIP] <Response [400]>
+
     r.json()
-    return JSONResponse(r)
+
+    return JSONResponse(content=r)
