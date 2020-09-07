@@ -11,15 +11,11 @@ app = FastAPI(
 )
 
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
 @app.get("/users/")
 def read_users():
     url = 'http://django:3000/login/'
     r = requests.get(url)
+    r.raise_for_status()
     # [WIP] <Response [400]>
 
     r.json()
