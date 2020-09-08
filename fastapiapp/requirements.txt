@@ -1,5 +1,7 @@
 fastapi==0.61.1
+psycopg2-binary==2.8.5
+alembic==1.4.2
 uvicorn==0.11.8
 postgres==3.0.0
 requests==2.24.0
-
+fastapi-sqlalchemy==0.1.6
