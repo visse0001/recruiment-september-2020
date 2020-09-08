@@ -1,6 +1,7 @@
+import json
+
 from django.shortcuts import render, redirect
-from django.contrib.auth import login
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from .forms import RegisterForm, LoginForm
 
 
@@ -12,26 +13,31 @@ def register(request):
 
             context = {'form': form}
 
-            return render(request, "users/register.html", context)
+            return render(request, "users/login.html", context)
 
     if request.method == "GET":
         form = RegisterForm()
 
-        return render(request, "users/register.html")
+        context = {'form': form}
+
+        return render(request, "users/register.html", context)
 
 
 def login(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
-            # user -> authenticate by requests to fastapiapp localhost:8000
-            # if response from fastapiapp is 'PASS'
+            user = form.save()
+
             first_name = request.POST['first_name']
             last_name = request.POST['last_name']
             email = request.POST['email']
 
             context = {"first_name": first_name, "last_name": last_name, "email": email}
-            return HttpResponse(f'Authenticated successfully! Context: {context}')
+
+            context_json = json.dumps(context)
+
+            return JsonResponse(context_json, safe=False)
         else:
             return HttpResponse('Invalid login.')
 
