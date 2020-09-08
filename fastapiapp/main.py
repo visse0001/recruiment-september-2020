@@ -7,7 +7,7 @@ from fastapi.responses import JSONResponse
 # Start applications
 app = FastAPI(
     title='A microservice for data authorization.',
-    description='Input: name, email. Output: PASS or FAIL',
+    description='Input: first name, last name, email. Output: "PASS" or "FAIL"',
 )
 
 
