@@ -49,15 +49,20 @@ To create superuser: <br>
 
 ## Register and login user in the Django app
 
-Go to http://localhost:3000/register <br> and register a new user. <br>
+Go to http://localhost:3000/register and register a new user. <br>
 Try to remember first name, last name, email and password. <br>
 
-After logging in you should see something like that: <br>
+Then you will be redirected to the login page.
+
+After logging in you should see something like that, but with your data: <br>
 `{\"first_name\": \"John\", \"last_name\": \"Doe\", \"email\": \"john@doe.com\"}`
+
 
 ## Authenticate in the FastApi app
 
 [WIP]
 
+Go to http://localhost:8000/users <br>
+At this point the same data should be displayed, but it does not work yet.
 
 
