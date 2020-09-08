@@ -29,9 +29,6 @@ def login(request):
         if form.is_valid():
             user = form.save()
 
-            # user -> authenticate by requests to fastapiapp localhost:8000
-            # if response from fastapiapp is 'PASS'
-
             first_name = request.POST['first_name']
             last_name = request.POST['last_name']
             email = request.POST['email']
