@@ -27,7 +27,7 @@ def login(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
-            user = form.save()
+            form.save()
 
             first_name = request.POST['first_name']
             last_name = request.POST['last_name']
