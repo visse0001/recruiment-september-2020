@@ -19,4 +19,12 @@ def check():
     url = f'http://{django_host}:3000/user_auth/'
     r = requests.get(url)
 
+    user_data = json.load(r)
+
+    first_name = user_data['first_name']
+    last_name = user_data['last_name']
+    email = user_data['email']
+
+
+
     return r
