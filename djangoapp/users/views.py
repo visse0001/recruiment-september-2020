@@ -1,5 +1,6 @@
 import json
 
+import requests
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.contrib import messages
@@ -35,5 +36,8 @@ def user_auth(request):
                'email': email}
 
     context_json = json.dumps(context)
+    url = 'http://0.0.0.0:8000/check/'
+
+    x = requests.post(url, json=context_json)
 
     return JsonResponse(context_json, safe=False)

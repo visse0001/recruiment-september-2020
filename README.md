@@ -5,9 +5,29 @@ Link to the [task](https://github.com/visse0001/recruiment-september-2020/blob/d
 ## Dependencies
 
 [Python 3.8](https://www.python.org/downloads/) <br>
+[pip](https://pip.pypa.io/en/stable/installing/) <br>
 [Django](https://docs.djangoproject.com/en/3.1/) <br>
 [Postgres](https://www.postgresql.org/) <br>
 [FastAPI](https://fastapi.tiangolo.com/) <br>
+
+## Virtual Enviroment
+Create a virtual environment: <br/>
+`python3.8 -m venv venv`
+
+To activate a venv: <br/>
+`source venv/bin/activate`
+
+To run django app - open new terminal with project path, then:
+```
+cd djangoapp
+python manage.py runserver 3000
+```
+
+To run fastapi app - open another terminal with project path, then:
+```
+cd fastapiapp
+uvicorn main:app --reload --host 0.0.0.0
+```
 
 ## Docker and docker-compose
 

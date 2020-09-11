@@ -1,3 +1,4 @@
+import json
 import requests
 
 from fastapi import FastAPI
@@ -17,7 +18,5 @@ def check():
 
     url = f'http://{django_host}:3000/user_auth/'
     r = requests.get(url)
-    # print(r.text)
-    # r.json()
 
     return r
