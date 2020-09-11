@@ -10,8 +10,8 @@ app = FastAPI(
 )
 
 
-@app.get("/users/")
-def read_users():
+@app.get("/check/")
+def check():
     django_host = "localhost"
     # django_host = "django"
 
