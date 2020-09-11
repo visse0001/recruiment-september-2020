@@ -15,9 +15,9 @@ def check():
     django_host = "localhost"
     # django_host = "django"
 
-    url = f'http://{django_host}:3000/login/'
+    url = f'http://{django_host}:3000/user_auth/'
     r = requests.get(url)
-    print(r.text)
+    # print(r.text)
     # r.json()
 
-    return str(r.json())
+    return r
