@@ -26,4 +26,14 @@ def register(request):
 
 @login_required(login_url='login')
 def user_auth(request):
-    return HttpResponse('Login works fine.')
+    firstname = request.user.first_name
+    lastname = request.user.last_name
+    email = request.user.email
+
+    context = {'firstname': firstname,
+               'lastname': lastname,
+               'email': email}
+
+    context_json = json.dumps(context)
+
+    return JsonResponse(context_json, safe=False)
