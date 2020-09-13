@@ -36,8 +36,15 @@ def user_auth(request):
                'email': email}
 
     context_json = json.dumps(context)
-    url = 'http://0.0.0.0:8000/check/'
+    url = 'http://localhost:8000/check/'
 
     x = requests.post(url, json=context_json)
+    print(f'Response: {x}.')
+    print(f'Text: {x.text}.')
 
-    return JsonResponse(context_json, safe=False)
+    response = {
+        'response': x.text
+    }
+
+    return JsonResponse(response, safe=False)
+

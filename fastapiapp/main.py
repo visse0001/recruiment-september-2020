@@ -2,7 +2,6 @@ import json
 import requests
 
 from fastapi import FastAPI
-from fastapi.responses import JSONResponse, HTMLResponse
 
 # Start applications
 app = FastAPI(
@@ -11,20 +10,13 @@ app = FastAPI(
 )
 
 
-@app.get("/check/")
+@app.post("/check/")
 def check():
-    django_host = "localhost"
-    # django_host = "django"
+    # django_host = "localhost"
+    # # django_host = "django"
+    #
+    # url = f'http://{django_host}:3000/user_auth/'
+    # r = requests.get(url)
+    # print(f'Request: {r}.')
 
-    url = f'http://{django_host}:3000/user_auth/'
-    r = requests.get(url)
-
-    user_data = json.load(r)
-
-    first_name = user_data['first_name']
-    last_name = user_data['last_name']
-    email = user_data['email']
-
-
-
-    return r
+    return 'kotek'
