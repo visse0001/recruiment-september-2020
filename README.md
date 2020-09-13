@@ -1,6 +1,6 @@
 # An application with a microservice for data authorization
 
-Link to the [task](https://github.com/visse0001/recruiment-september-2020/blob/develop/recuriment_task.md).
+Link to the [task](recruitment_task.md).
 
 ## Dependencies
 
