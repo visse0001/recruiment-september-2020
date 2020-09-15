@@ -1,13 +1,6 @@
 from fastapi import FastAPI
 
-from pydantic import BaseModel
-
-
-class Message(BaseModel):
-    first_name: str
-    last_name: str
-    email: str
-
+from .models import Message
 
 app = FastAPI(
     title='A microservice for data authorization.',
