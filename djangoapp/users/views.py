@@ -27,17 +27,24 @@ def register(request):
 
 @login_required(login_url='login')
 def user_auth(request):
-    firstname = request.user.first_name
-    lastname = request.user.last_name
+    first_name = request.user.first_name
+    last_name = request.user.last_name
     email = request.user.email
 
-    context = {'firstname': firstname,
-               'lastname': lastname,
+    context = {'first_name': first_name,
+               'last_name': last_name,
                'email': email}
 
-    context_json = json.dumps(context)
-    url = 'http://0.0.0.0:8000/check/'
+    # context_json = json.dumps(context)
+    url = 'http://localhost:8000/check/'
 
-    x = requests.post(url, json=context_json)
+    x = requests.post(url, json=context)
+    # print(f'Response: {x}.')
+    # print(f'Text: {x.text}.')
 
-    return JsonResponse(context_json, safe=False)
+    response = {
+        'response': x.text
+    }
+
+    return JsonResponse(response, safe=False)
+
