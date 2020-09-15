@@ -38,12 +38,12 @@ def user_auth(request):
     # context_json = json.dumps(context)
     url = 'http://localhost:8000/check/'
 
-    x = requests.post(url, json=context)
-    # print(f'Response: {x}.')
-    # print(f'Text: {x.text}.')
+    fastapi_response = requests.post(url, json=context)
+    # print(f'Response: {fastapi_response}.')
+    # print(f'Text: {fastapi_response.text}.')
 
     response = {
-        'response': x.text
+        'response': fastapi_response.text
     }
 
     return JsonResponse(response, safe=False)
