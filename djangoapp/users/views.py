@@ -36,15 +36,14 @@ def user_auth(request):
                'email': email}
 
     # context_json = json.dumps(context)
-    url = 'http://localhost:8000/check/'
+
+    # url = 'http://localhost:8000/check'
+    url = 'http://localhost:4000/check'
 
     fastapi_response = requests.post(url, json=context)
-    # print(f'Response: {fastapi_response}.')
-    # print(f'Text: {fastapi_response.text}.')
 
     response = {
         'response': fastapi_response.text
     }
 
     return JsonResponse(response, safe=False)
-
