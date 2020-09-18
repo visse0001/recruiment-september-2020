@@ -36,8 +36,6 @@ def user_auth(request):
                'last_name': last_name,
                'email': email}
 
-    # context_json = json.dumps(context)
-
     # FastAPI
     # url = 'http://localhost:8000/check'
 
@@ -52,7 +50,6 @@ def user_auth(request):
 
     resp = response['response']
     if resp == 'PASS':
-        # all_users = User.objects.all()
         return HttpResponse('User is in the database.')
     else:
         return HttpResponse('User is not in the database.')
