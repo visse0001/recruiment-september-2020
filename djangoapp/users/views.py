@@ -7,19 +7,19 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
-from .forms import RegisterForm
+from .forms import CustomUserCreationForm
 
 
 def register(request):
     if request.method == "POST":
-        form = RegisterForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account created for {username}! You are now able to login')
             return redirect('login')
     else:
-        form = RegisterForm()
+        form = CustomUserCreationForm()
 
     context = {'form': form}
 

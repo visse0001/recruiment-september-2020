@@ -121,3 +121,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = 'user_auth'
+LOGOUT_REDIRECT_URL = 'register'
+
+AUTH_USER_MODEL = 'users.CustomUser'

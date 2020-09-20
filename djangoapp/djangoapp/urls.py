@@ -21,7 +21,7 @@ from users import views as v
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', v.register, name='register'),
-    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
-    path('user_auth/', v.user_auth, name='user_auth')
+    # path('register/', v.register, name='register'),
+    # path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
+    # path('user_auth/', v.user_auth, name='user_auth')
 ]
